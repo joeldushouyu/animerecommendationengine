@@ -1,0 +1,1038 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    {% block title %}
+
+    {% endblock %}
+    </title>
+    <!--for sakura-->
+
+
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link href="{{url_for('.static', filename='jquery-sakura.css')}}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbars/">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    {% block styles %}
+    <!-- sakura-->
+    <style>
+@-webkit-keyframes fall {
+    0% {
+        opacity: 0.9;
+        top: 0
+    }
+    100% {
+        opacity: 0.2;
+        top: 100%
+    }
+}
+
+@-o-keyframes fall {
+    0% {
+        opacity: 0.9;
+        top: 0
+    }
+    100% {
+        opacity: 0.2;
+        top: 100%
+    }
+}
+
+@-ms-keyframes fall {
+    0% {
+        opacity: 0.9;
+        top: 0
+    }
+    100% {
+        opacity: 0.2;
+        top: 100%
+    }
+}
+
+@-moz-keyframes fall {
+    0% {
+        opacity: 0.9;
+        top: 0
+    }
+    100% {
+        opacity: 0.2;
+        top: 100%
+    }
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0.9;
+        top: 0
+    }
+    100% {
+        opacity: 0.2;
+        top: 100%
+    }
+}
+
+@-webkit-keyframes blow-soft-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -50%
+    }
+}
+
+@-o-keyframes blow-soft-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -50%
+    }
+}
+
+@-ms-keyframes blow-soft-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -50%
+    }
+}
+
+@-moz-keyframes blow-soft-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -50%
+    }
+}
+
+@keyframes blow-soft-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -50%
+    }
+}
+
+@-webkit-keyframes blow-medium-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -100%
+    }
+}
+
+@-o-keyframes blow-medium-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -100%
+    }
+}
+
+@-ms-keyframes blow-medium-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -100%
+    }
+}
+
+@-moz-keyframes blow-medium-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -100%
+    }
+}
+
+@keyframes blow-medium-left {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: -100%
+    }
+}
+
+@-webkit-keyframes blow-soft-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 50%
+    }
+}
+
+@-o-keyframes blow-soft-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 50%
+    }
+}
+
+@-ms-keyframes blow-soft-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 50%
+    }
+}
+
+@-moz-keyframes blow-soft-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 50%
+    }
+}
+
+@keyframes blow-soft-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 50%
+    }
+}
+
+@-webkit-keyframes blow-medium-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 100%
+    }
+}
+
+@-o-keyframes blow-medium-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 100%
+    }
+}
+
+@-ms-keyframes blow-medium-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 100%
+    }
+}
+
+@-moz-keyframes blow-medium-lerightft {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 100%
+    }
+}
+
+@keyframes blow-medium-right {
+    0% {
+        margin-left: 0
+    }
+    100% {
+        margin-left: 100%
+    }
+}
+
+@-webkit-keyframes sway-0 {
+    0% {
+        -webkit-transform: rotate(-5deg)
+    }
+    40% {
+        -webkit-transform: rotate(28deg)
+    }
+    100% {
+        -webkit-transform: rotate(3deg)
+    }
+}
+
+@-o-keyframes sway-0 {
+    0% {
+        -o-transform: rotate(-5deg)
+    }
+    40% {
+        -o-transform: rotate(28deg)
+    }
+    100% {
+        -o-transform: rotate(3deg)
+    }
+}
+
+@-ms-keyframes sway-0 {
+    0% {
+        -ms-transform: rotate(-5deg)
+    }
+    40% {
+        -ms-transform: rotate(28deg)
+    }
+    100% {
+        -ms-transform: rotate(3deg)
+    }
+}
+
+@-moz-keyframes sway-0 {
+    0% {
+        -moz-transform: rotate(-5deg)
+    }
+    40% {
+        -moz-transform: rotate(28deg)
+    }
+    100% {
+        -moz-transform: rotate(3deg)
+    }
+}
+
+@keyframes sway-0 {
+    0% {
+        transform: rotate(-5deg)
+    }
+    40% {
+        transform: rotate(28deg)
+    }
+    100% {
+        transform: rotate(3deg)
+    }
+}
+
+@-webkit-keyframes sway-1 {
+    0% {
+        -webkit-transform: rotate(10deg)
+    }
+    40% {
+        -webkit-transform: rotate(43deg)
+    }
+    100% {
+        -webkit-transform: rotate(15deg)
+    }
+}
+
+@-o-keyframes sway-1 {
+    0% {
+        -o-transform: rotate(10deg)
+    }
+    40% {
+        -o-transform: rotate(43deg)
+    }
+    100% {
+        -o-transform: rotate(15deg)
+    }
+}
+
+@-ms-keyframes sway-1 {
+    0% {
+        -ms-transform: rotate(10deg)
+    }
+    40% {
+        -ms-transform: rotate(43deg)
+    }
+    100% {
+        -ms-transform: rotate(15deg)
+    }
+}
+
+@-moz-keyframes sway-1 {
+    0% {
+        -moz-transform: rotate(10deg)
+    }
+    40% {
+        -moz-transform: rotate(43deg)
+    }
+    100% {
+        -moz-transform: rotate(15deg)
+    }
+}
+
+@keyframes sway-1 {
+    0% {
+        transform: rotate(10deg)
+    }
+    40% {
+        transform: rotate(43deg)
+    }
+    100% {
+        transform: rotate(15deg)
+    }
+}
+
+@-webkit-keyframes sway-2 {
+    0% {
+        -webkit-transform: rotate(15deg)
+    }
+    40% {
+        -webkit-transform: rotate(56deg)
+    }
+    100% {
+        -webkit-transform: rotate(22deg)
+    }
+}
+
+@-o-keyframes sway-2 {
+    0% {
+        -o-transform: rotate(15deg)
+    }
+    40% {
+        -o-transform: rotate(56deg)
+    }
+    100% {
+        -o-transform: rotate(22deg)
+    }
+}
+
+@-ms-keyframes sway-2 {
+    0% {
+        -ms-transform: rotate(15deg)
+    }
+    40% {
+        -ms-transform: rotate(56deg)
+    }
+    100% {
+        -ms-transform: rotate(22deg)
+    }
+}
+
+@-moz-keyframes sway-2 {
+    0% {
+        -moz-transform: rotate(15deg)
+    }
+    40% {
+        -moz-transform: rotate(56deg)
+    }
+    100% {
+        -moz-transform: rotate(22deg)
+    }
+}
+
+@keyframes sway-2 {
+    0% {
+        transform: rotate(15deg)
+    }
+    40% {
+        transform: rotate(56deg)
+    }
+    100% {
+        transform: rotate(22deg)
+    }
+}
+
+@-webkit-keyframes sway-3 {
+    0% {
+        -webkit-transform: rotate(25deg)
+    }
+    40% {
+        -webkit-transform: rotate(74deg)
+    }
+    100% {
+        -webkit-transform: rotate(37deg)
+    }
+}
+
+@-o-keyframes sway-3 {
+    0% {
+        -o-transform: rotate(25deg)
+    }
+    40% {
+        -o-transform: rotate(74deg)
+    }
+    100% {
+        -o-transform: rotate(37deg)
+    }
+}
+
+@-ms-keyframes sway-3 {
+    0% {
+        -ms-transform: rotate(25deg)
+    }
+    40% {
+        -ms-transform: rotate(74deg)
+    }
+    100% {
+        -ms-transform: rotate(37deg)
+    }
+}
+
+@-moz-keyframes sway-3 {
+    0% {
+        -moz-transform: rotate(25deg)
+    }
+    40% {
+        -moz-transform: rotate(74deg)
+    }
+    100% {
+        -moz-transform: rotate(37deg)
+    }
+}
+
+@keyframes sway-3 {
+    0% {
+        transform: rotate(25deg)
+    }
+    40% {
+        transform: rotate(74deg)
+    }
+    100% {
+        transform: rotate(37deg)
+    }
+}
+
+@-webkit-keyframes sway-4 {
+    0% {
+        -webkit-transform: rotate(40deg)
+    }
+    40% {
+        -webkit-transform: rotate(68deg)
+    }
+    100% {
+        -webkit-transform: rotate(25deg)
+    }
+}
+
+@-o-keyframes sway-4 {
+    0% {
+        -o-transform: rotate(40deg)
+    }
+    40% {
+        -o-transform: rotate(68deg)
+    }
+    100% {
+        -o-transform: rotate(25deg)
+    }
+}
+
+@-ms-keyframes sway-4 {
+    0% {
+        -ms-transform: rotate(40deg)
+    }
+    40% {
+        -ms-transform: rotate(68deg)
+    }
+    100% {
+        -ms-transform: rotate(25deg)
+    }
+}
+
+@-moz-keyframes sway-4 {
+    0% {
+        -moz-transform: rotate(40deg)
+    }
+    40% {
+        -moz-transform: rotate(68deg)
+    }
+    100% {
+        -moz-transform: rotate(25deg)
+    }
+}
+
+@keyframes sway-4 {
+    0% {
+        transform: rotate(40deg)
+    }
+    40% {
+        transform: rotate(68deg)
+    }
+    100% {
+        transform: rotate(25deg)
+    }
+}
+
+@-webkit-keyframes sway-5 {
+    0% {
+        -webkit-transform: rotate(50deg)
+    }
+    40% {
+        -webkit-transform: rotate(78deg)
+    }
+    100% {
+        -webkit-transform: rotate(40deg)
+    }
+}
+
+@-o-keyframes sway-5 {
+    0% {
+        -o-transform: rotate(50deg)
+    }
+    40% {
+        -o-transform: rotate(78deg)
+    }
+    100% {
+        -o-transform: rotate(40deg)
+    }
+}
+
+@-ms-keyframes sway-5 {
+    0% {
+        -ms-transform: rotate(50deg)
+    }
+    40% {
+        -ms-transform: rotate(78deg)
+    }
+    100% {
+        -ms-transform: rotate(40deg)
+    }
+}
+
+@-moz-keyframes sway-5 {
+    0% {
+        -moz-transform: rotate(50deg)
+    }
+    40% {
+        -moz-transform: rotate(78deg)
+    }
+    100% {
+        -moz-transform: rotate(40deg)
+    }
+}
+
+@keyframes sway-5 {
+    0% {
+        transform: rotate(50deg)
+    }
+    40% {
+        transform: rotate(78deg)
+    }
+    100% {
+        transform: rotate(40deg)
+    }
+}
+
+@-webkit-keyframes sway-6 {
+    0% {
+        -webkit-transform: rotate(65deg)
+    }
+    40% {
+        -webkit-transform: rotate(92deg)
+    }
+    100% {
+        -webkit-transform: rotate(58deg)
+    }
+}
+
+@-o-keyframes sway-6 {
+    0% {
+        -o-transform: rotate(65deg)
+    }
+    40% {
+        -o-transform: rotate(92deg)
+    }
+    100% {
+        -o-transform: rotate(58deg)
+    }
+}
+
+@-ms-keyframes sway-6 {
+    0% {
+        -ms-transform: rotate(65deg)
+    }
+    40% {
+        -ms-transform: rotate(92deg)
+    }
+    100% {
+        -ms-transform: rotate(58deg)
+    }
+}
+
+@-moz-keyframes sway-6 {
+    0% {
+        -moz-transform: rotate(65deg)
+    }
+    40% {
+        -moz-transform: rotate(92deg)
+    }
+    100% {
+        -moz-transform: rotate(58deg)
+    }
+}
+
+@keyframes sway-6 {
+    0% {
+        transform: rotate(65deg)
+    }
+    40% {
+        transform: rotate(92deg)
+    }
+    100% {
+        transform: rotate(58deg)
+    }
+}
+
+@-webkit-keyframes sway-7 {
+    0% {
+        -webkit-transform: rotate(72deg)
+    }
+    40% {
+        -webkit-transform: rotate(118deg)
+    }
+    100% {
+        -webkit-transform: rotate(68deg)
+    }
+}
+
+@-o-keyframes sway-7 {
+    0% {
+        -o-transform: rotate(72deg)
+    }
+    40% {
+        -o-transform: rotate(118deg)
+    }
+    100% {
+        -o-transform: rotate(68deg)
+    }
+}
+
+@-ms-keyframes sway-7 {
+    0% {
+        -ms-transform: rotate(72deg)
+    }
+    40% {
+        -ms-transform: rotate(118deg)
+    }
+    100% {
+        -ms-transform: rotate(68deg)
+    }
+}
+
+@-moz-keyframes sway-7 {
+    0% {
+        -moz-transform: rotate(72deg)
+    }
+    40% {
+        -moz-transform: rotate(118deg)
+    }
+    100% {
+        -moz-transform: rotate(68deg)
+    }
+}
+
+@keyframes sway-7 {
+    0% {
+        transform: rotate(72deg)
+    }
+    40% {
+        transform: rotate(118deg)
+    }
+    100% {
+        transform: rotate(68deg)
+    }
+}
+
+@-webkit-keyframes sway-8 {
+    0% {
+        -webkit-transform: rotate(94deg)
+    }
+    40% {
+        -webkit-transform: rotate(136deg)
+    }
+    100% {
+        -webkit-transform: rotate(82deg)
+    }
+}
+
+@-o-keyframes sway-8 {
+    0% {
+        -o-transform: rotate(94deg)
+    }
+    40% {
+        -o-transform: rotate(136deg)
+    }
+    100% {
+        -o-transform: rotate(82deg)
+    }
+}
+
+@-ms-keyframes sway-8 {
+    0% {
+        -ms-transform: rotate(94deg)
+    }
+    40% {
+        -ms-transform: rotate(136deg)
+    }
+    100% {
+        -ms-transform: rotate(82deg)
+    }
+}
+
+@-moz-keyframes sway-8 {
+    0% {
+        -moz-transform: rotate(94deg)
+    }
+    40% {
+        -moz-transform: rotate(136deg)
+    }
+    100% {
+        -moz-transform: rotate(82deg)
+    }
+}
+
+@keyframes sway-8 {
+    0% {
+        transform: rotate(94deg)
+    }
+    40% {
+        transform: rotate(136deg)
+    }
+    100% {
+        transform: rotate(82deg)
+    }
+}
+
+.sakura {
+    background: -webkit-linear-gradient(120deg, rgba(255, 183, 197, 0.9), rgba(255, 197, 208, 0.9));
+    background: -o-linear-gradient(120deg, rgba(255, 183, 197, 0.9), rgba(255, 197, 208, 0.9));
+    background: -ms-linear-gradient(120deg, rgba(255, 183, 197, 0.9), rgba(255, 197, 208, 0.9));
+    background: -moz-linear-gradient(120deg, rgba(255, 183, 197, 0.9), rgba(255, 197, 208, 0.9));
+    background: linear-gradient(120deg, rgba(255, 183, 197, 0.9), rgba(255, 197, 208, 0.9));
+    -webkit-border-radius: 12px 1px;
+    -o-border-radius: 12px 1px;
+    -ms-border-radius: 12px 1px;
+    -moz-border-radius: 12px 1px;
+    border-radius: 12px 1px;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    -ms-pointer-events: none;
+    -o-pointer-events: none;
+    pointer-events: none;
+    position: absolute
+}
+    </style>
+      <style>
+
+
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+@media (min-device-width:600px) {
+    img[data-src-600px] {
+        content: attr(data-src-600px, url);
+    }
+}
+
+@media (min-device-width:800px) {
+    img[data-src-800px] {
+        content: attr(data-src-800px, url);
+    }
+}
+
+@media (min-width: 640px) { body {font-size:1rem;} }
+@media (min-width:960px) { body {font-size:1.2rem;} }
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+
+img { max-width: 100%; height: auto; }
+html { font-size:70%; }
+</style>
+<!--for navbar--
+https://www.w3schools.com/howto/howto_js_topnav_responsive.asp-->
+
+<style>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .navbar-custom a:not(:first-child) {display: none;}
+  .navbar-custom a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .navbar-custom.responsive {position: relative;}
+  .navbar-custom.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar-custom.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.navbar-custom {
+    background-color: #FF1493;
+    overflow: hidden;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+/* Style the links inside the navigation bar */
+.navbar-custom a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar-custom a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.navbar-custom a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.navbar-custom .icon {
+  display: none;
+}
+
+      </style>
+      <style>
+
+body {
+  background-color: white;
+}
+
+      </style>
+    {% endblock %}
+  </head>
+  <body>
+
+
+  <!--for any flash error message-->
+  <box>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+      {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+  </box>
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Anime Recommendation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/encyclopedia">Encyclopedia</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/recommendation">Recommend Anime Watchlist</a>
+          </li>
+
+        </ul>
+        <form class="form-inline mt-2 mt-md-0" action="/search" method="POST">
+          <input class="form-control mr-sm-2" type="text" name="searchWord" placeholder="Search an anime" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+    {% block content %}
+    {% endblock %}
+
+
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+
+
+  {% block script %}
+  {% endblock %}
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    !function(n){!function(){for(var n=0,i=["ms","moz","webkit","o"],a=0;a<i.length&&!window.requestAnimationFrame;++a)window.requestAnimationFrame=window[i[a]+"RequestAnimationFrame"],window.cancelAnimationFrame=window[i[a]+"CancelAnimationFrame"]||window[i[a]+"CancelRequestAnimationFrame"];window.requestAnimationFrame||(window.requestAnimationFrame=function(i){var a=(new Date).getTime(),t=Math.max(0,16-(a-n)),o=window.setTimeout(function(){i(a+t)},t);return n=a+t,o}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(n){clearTimeout(n)})}(),n.fn.sakura=function(i){function a(n,i){return Math.floor(Math.random()*(i-n+1))+n}function t(n,i,a){for(var t=0;e>t;t++)o[t]||(i=i.toLowerCase()),n.get(0).addEventListener(o[t]+i,a,!1)}var o=["moz","ms","o","webkit",""],e=o.length,m={blowAnimations:["blow-soft-left","blow-medium-left","blow-hard-left","blow-soft-right","blow-medium-right","blow-hard-right"],className:"sakura",fallSpeed:1,maxSize:14,minSize:9,newOn:300,swayAnimations:["sway-0","sway-1","sway-2","sway-3","sway-4","sway-5","sway-6","sway-7","sway-8"]},i=n.extend({},m,i),r=n(document).height(),s=n(document).width(),w=n('<div class="'+i.className+'" />');n("body").css({"overflow-x":"hidden"});var d=function(){setTimeout(function(){requestAnimationFrame(d)},i.newOn);var o=i.blowAnimations[Math.floor(Math.random()*i.blowAnimations.length)],e=i.swayAnimations[Math.floor(Math.random()*i.swayAnimations.length)],m=(Math.round(.007*r)+5*Math.random())*i.fallSpeed,l="fall "+m+"s linear 0s 1, "+o+" "+((m>30?m:30)-20+a(0,20))+"s linear 0s infinite, "+e+" "+a(2,4)+"s linear 0s infinite",u=w.clone(),c=a(i.minSize,i.maxSize),h=Math.random()*s-100,f=-(20*Math.random()+15);t(u,"AnimationEnd",function(){n(this).remove()}),t(u,"AnimationIteration",function(a){-1!=n.inArray(a.animationName,i.blowAnimations)&&n(this).remove()}),u.css({"-webkit-animation":l,"-o-animation":l,"-ms-animation":l,"-moz-animation":l,animation:l,height:c,left:h,"margin-top":f,width:c}).appendTo("body")};n(window).resize(function(){r=n(document).height(),s=n(document).width()}),requestAnimationFrame(d)}}(jQuery);
+  </script>
+  <script>
+  $(window).load(function () {
+      $('body').sakura();
+  });
+  </script>
+  </body>
+</html>

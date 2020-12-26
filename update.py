@@ -1,0 +1,2 @@
+import modified_anime_initalizing_api3
+modified_anime_initalizing_api3.update()

@@ -1,0 +1,149 @@
+{% extends "general_base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+
+<!--overlay from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_overlay_text-->
+
+<style>
+
+#overlay {
+ max-width: 960px; /** 20px smaller, to fit the paddings on the sides */
+  margin:0 auto; /* this will center the page */
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(190, 190, 190);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+</style>
+<!--https://stackoverflow.com/questions/19704477/adding-close-button-in-div-to-close-the-box-->
+<style>
+
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:coral;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome, {{ name }}</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              {% if iconUrl != "" %}
+                <img  src="{{iconUrl}}" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              {% endif %}
+              {% if iconUrl == "" %}
+                <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              {% endif %}
+
+
+
+            <div id="overlay" >
+              <span id='close' onclick='off()'>x</span>
+              <form action="/changeicon" method="POST">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>We are sorry for unable to provide the option of uploading icon right now.</p>
+                <p>Because this web is running on a free web server, with limited storage space.</p>
+                <label for="lname">URL for the picture:</label><br>
+                <input type="text" id="lname" name="iconUrl" ><br><br>
+                <input type="submit" value="Submit" onclick="off()">
+              </form>
+            </div>
+
+            <div style="padding:20px">
+              <button onclick="on()">Change icon picture</button>
+            </div>
+
+
+            </div>
+          </div>
+          <br>
+          <br>
+          <h2>View Encyclopedia</h2>
+          <p>List of different category</p>
+          <ul>
+            <a href="/encyclopedia/other"><b>#</b></font></a> <a href="/encyclopedia/a">A</a> <a href="/encyclopedia/b">B</a> <a href="/encyclopedia/c">C</a> <a href="/encyclopedia/d">D</a> <a href="/encyclopedia/e">E</a> <a href="/encyclopedia/f">F</a> <a href="/encyclopedia/g">G</a> <a href="/encyclopedia/h">H</a> <a href="/encyclopedia/i">I</a> <a href="/encyclopedia/j">J</a> <a href="/encyclopedia/k">K</a> <a href="/encyclopedia/l">L</a> <a href="/encyclopedia/m">M</a> <a href="/encyclopedia/n">N</a> <a href="/encyclopedia/o">O</a> <a href="/encyclopedia/p">P</a> <a href="/encyclopedia/q">Q</a> <a href="/encyclopedia/r">R</a> <a href="/encyclopedia/s">S</a> <a href="/encyclopedia/t">T</a> <a href="/encyclopedia/u">U</a> <a href="/encyclopedia/v">V</a> <a href="/encyclopedia/w">W</a> <a href="/encyclopedia/x">X</a> <a href="/encyclopedia/y">Y</a> <a href="/encyclopedia/z">Z</a>
+          </ul>
+
+           <h2>View by Genre</h2>
+            <p>Note: It might take about 10 seconds to load up the page</p>
+            <ul>
+                <a href="/genre/Action">action</a> <a href="/genre/Adventure">adventure</a> <a href="/genre/Cars">cars</a> <a href="/genre/Comedy">comedy</a> <a href="/genre/Dementia">dementia</a> <a href="/genre/Demons">demons</a> <a href="/genre/Drama">drama</a>
+                <a href="/genre/Ecchi">ecchi</a> <a href="/genre/Fantasy">fantasy</a> <a href="/genre/Game">game</a> <a href="/genre/Harem">harem</a> <a href="/genre/Hentai">hentai</a> <a href="/genre/Histroical">historical</a> <a href="/genre/Horror">horror</a>
+                <a href="/genre/Josei">josei</a> <a href="/genre/Kids">kids</a> <a href="/genre/Magic">magic</a> <a href="/genre/Martial Arts">martial arts</a> <a href="/genre/Mecha">mecha</a> <a href="/genre/Military">military</a> <a href="/genre/Music">music</a> <a href="/genre/Mystery">mystery</a>
+                <a href="/genre/Parody">parody</a> <a href="/genre/Police">police</a> <a href="/genre/Psychological">psychological</a> <a href="/genre/Romance">romance</a> <a href="/genre/Samurai">samurai</a> <a href="/genre/School">school</a>
+                <a href="/genre/Sci-Fi">sci-fi</a> <a href="/genre/Seinen">seinen</a> <a href="/genre/Shoujo">shoujo</a> <a href="/genre/Shoujo Ai">shoujo ai</a> <a href="/genre/Shounen">shounen ai</a> <a href="/genre/Slice of Life">slice of life</a>
+                <a href="/genre/Space">space</a> <a href="/genre/Sports">sports</a> <a href="/genre/Super Power">super power</a> <a href="/genre/Supernatural">supernatural</a> <a href="/genre/Thriller">thriller</a> <a href="/genre/Vampire">vampire</a> <a href="/genre/Yaoi">yaoi</a> <a href="/genre/Yuri">yuri</a>
+
+            </ul>
+
+            <h2>Recommend engine</h2>
+            <h4>This will take a while, depend on the status of sever</h4>
+            <a href="/recommendation">recommend me some anime to watch</a>
+
+
+
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+{% block box %}
+{{super()}}
+{% endblock %}
+
+{% endblock %}
+
+{% block script %}
+<script>
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "general_base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block styles %}
+
+{{super()}}
+
+<style>
+.bottom-box {
+
+    width: 700px;
+    height: 350px;
+    border: 20px solid lightgray;
+    padding: 20px;
+    overflow: auto;
+  }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Anime Recommendation</h1>
+        <p class="lead">Hello and Welcome!<br>
+            This is a free to all anime recommendation engine setup by a college freshmen</p>
+         <p>The recommendation engine applied the technique and concept of stochastic gradient descent(SGD) in Machine Learning</p>
+          <p>The recommendation engine will generate recommend watchlist base on your rating along with others' rating on various anime.</p>
+          <p>Thus, the more anime you and others rate, the better the recommendation engine will perform</p>
+          <p>The primary purpose of this website is to recommend people animes that they will enjoy to watch</p>
+      </div>
+
+    </div><!-- /.container -->
+    <!-- for sakura-->
+
+{% block box %}
+{{super()}}
+
+{% endblock %}
+
+{% endblock %}

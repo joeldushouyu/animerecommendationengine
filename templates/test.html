@@ -1,0 +1,327 @@
+html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb_2312-80">
+<title>新页面 </title>
+</head>
+<body>
+<script language="JavaScript">
+<!--
+done = 0;
+step = 4
+function anim(yp,yk)
+{
+if(document.layers) document.layers["napis"].top=yp;
+else document.all["napis"].style.top=yp;
+if(yp>yk) step = -4
+if(yp<60) step = 4
+setTimeout('anim('+(yp+step)+','+yk+')', 35);
+}
+function start()
+{
+if(done) return
+done = 1;
+if(navigator.appName=="Netscape") {
+document.napis.left=innerWidth/2 - 145;
+anim(60,innerHeight - 60)
+}
+else {
+napis.style.left=11;
+anim(60,document.body.offsetHeight - 60)
+}
+}
+//-->
+</script>
+<div id="napis"
+style="position: absolute;top: -50;
+color: #000000;font-family:宋体;font-size:9pt;">
+</div><script language="JavaScript">
+<!--
+setTimeout('start()',10);
+//-->
+</script>
+<script language="JavaScript">
+<!-- Begin
+function initArray() {
+for (var i = 0; i < initArray.arguments.length; i++) {
+this[i] = initArray.arguments[i];
+}
+this.length = initArray.arguments.length;
+}
+var colors = new initArray(
+"#000000","#0000FF","#80FFFF","#80FF80","#FFFF00","#FF8000","#FF00FF","#FF0000"
+);
+delay = 100
+link = 0;
+vlink = 0;
+function linkDance() {
+link = (link+1)%colors.length;
+vlink = (vlink+1)%colors.length;
+document.linkColor = colors[link];
+document.vlinkColor = colors[vlink];
+setTimeout("linkDance()",delay);
+}
+linkDance();
+// End -->
+</script>
+<script>
+function colors(c1){
+this.c1 = c1;
+}
+a00 = new colors("FFFBD0");
+a01 = new colors("FF0000");
+a02 = new colors("FF8080");
+a03 = new colors("FF8000");
+a04 = new colors("FFFF00");
+a05 = new colors("000080");
+a06 = new colors("0000FF");
+a07 = new colors("008000");
+a08 = new colors("00FF00");
+a09 = new colors("804000");
+a10 = new colors("808000");
+a11 = new colors("000000");
+a12 = new colors("FFFFFF");
+a13 = new colors("C0C0C0");
+a14 = new colors("408080");
+a15 = new colors("808080");
+a16 = new colors("D2BF51");
+a17 = new colors("44BBE8");
+a18 = new colors("C97AB9");
+a19 = new colors("A2C97A");
+a20 = new colors("804000");
+a21 = new colors("6AE6C4");
+a22 = new colors("33A3D1");
+a23 = new colors("6C9AEE");
+function changebg(type){
+scheme = type;
+document.bgColor = scheme.c1;
+timerID=setTimeout('document.bgColor = scheme.c2', document.selector.value * 10);
+}
+</script>
+<form NAME="selector">
+<p><input TYPE="button" onClick="changebg(a00)" style="background-color: rgb(255,251,208)"><input
+TYPE="button" onClick="changebg(a01)" style="background-color: rgb(255,0,0)"><input
+TYPE="button" onClick="changebg(a02)" style="background-color: rgb(255,128,128)"><input
+TYPE="button" onClick="changebg(a03)" style="background-color: rgb(255,128,0)"><input
+TYPE="button" onClick="changebg(a04)" style="background-color: rgb(255,255,0)"><input
+TYPE="button" onClick="changebg(a05)" style="background-color: rgb(0,0,128)"><input
+TYPE="button" onClick="changebg(a06)" style="background-color: rgb(0,0,255)"><input
+TYPE="button" onClick="changebg(a07)" style="background-color: rgb(0,128,0)"><input
+TYPE="button" onClick="changebg(a08)" style="background-color: rgb(0,255,0)"><input
+TYPE="button" onClick="changebg(a09)" style="background-color: rgb(128,0,0)"><input
+TYPE="button" onClick="changebg(a10)" style="background-color: rgb(128,128,0)"><input
+TYPE="button" onClick="changebg(a11)" style="background-color: rgb(0,0,0)"><input
+TYPE="button" onClick="changebg(a12)" style="background-color: rgb(255,255,255)"><input
+TYPE="button" onClick="changebg(a13)" style="background-color: rgb(192,192,192)"><input
+TYPE="button" onClick="changebg(a14)" style="background-color: rgb(64,128,128)"><input
+TYPE="button" onClick="changebg(a15)" style="background-color: rgb(128,128,128)"><input
+TYPE="button" onClick="changebg(a16)" style="background-color: rgb(210,191,81)"><input
+TYPE="button" onClick="changebg(a17)" style="background-color: rgb(68,187,232)"><input
+TYPE="button" onClick="changebg(a18)" style="background-color: rgb(201,122,185)"><input
+TYPE="button" onClick="changebg(a19)" style="background-color: rgb(162,201,122)"><input
+TYPE="button" onClick="changebg(a20)" style="background-color: rgb(106,230,196)"><input
+TYPE="button" onClick="changebg(a21)" style="background-color: rgb(194,219,185)"><input
+TYPE="button" onClick="changebg(a22)" style="background-color: rgb(51,163,209)"><input
+TYPE="button" onClick="changebg(a23)" style="background-color: rgb(108,154,238)"> </p>
+</form>
+</body>
+</html>
+不停变换的背景颜色[共1步]
+====1、将以下代码加入HTML的<body></body>之间：
+<body bgColor="#ffffff" onload="chgCol(); pingpong();">
+<script language="JavaScript">
+<!-- Hide from JavaScript-Impaired Browsers
+var pos = 10;
+function initArray() {
+this.length = initArray.arguments.length;
+for (var i = 0; i < this.length; i++) {
+this[i] = initArray.arguments[i];
+}
+}
+var col=new initArray("4b","5b","8b","8b");
+col[0] = "yellow";
+col[1] = "coral";
+col[2] = "orange";
+col[3] = "red";
+col[4] = "greenyellow";
+col[5] = "lime";
+col[6] = "turquoise";
+col[7] = "coral";
+col[8] = "blueviolet";
+col[9] = "violet";
+function chgCol() {
+pos++;
+if (pos<0||pos>9) {
+pos = 0;
+}
+document.bgColor = col[pos];
+setTimeout("chgCol()",5000);
+/* Change above set to every 10 seconds (1000 = 1 sec) If
+you wish to speed it up, lower the number. To slow it
+down, raise the number. */
+}
+var yourwords = "不断变化背景色彩";var buffer1=" ";var buffer2=" ";var message1=buffer1+yourwords+buffer2;var dir = "left";var speed =150;function pingpong(){if (dir == "left") { message2=message1.substring(2,message1.length)+" "; window.status=message2; setTimeout("pingpong();",speed); message1=message2; if (message1.substring(0,1) == "*") dir="right"; }else { message2=" "+message1.substring(0,message1.length-2); window.status=message2; setTimeout("pingpong();",speed); message1=message2; if (message1.substring(message1.length-1,message1.length) == "*") dir="left"; }}// --></script>
+检测浏览器类型并调用不同的背景音乐[修改MIDI文件名][共1步]
+====1、将以下代码加入HTML的<body></body>之间：
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var MSIE=navigator.userAgent.indexOf("MSIE");
+var NETS=navigator.userAgent.indexOf("Netscape");
+var OPER=navigator.userAgent.indexOf("Opera");
+if((MSIE>-1) || (OPER>-1)) {
+document.write("<BGSOUND SRC=sound.mid LOOP=INFINITE>");
+} else {
+document.write("<EMBED SRC=sound2.mid AUTOSTART=TRUE ");
+document.write("HIDDEN=true VOLUME=100 LOOP=TRUE>");
+}
+// End -->
+</SCRIPT>
+滚动背景[特别推荐][共1步][IE专用]
+====1、将以下代码加入HEML的<body></body>之间：
+<script language="VBScript">
+dim c,numgc
+c=-100000
+numgc=document.body.sourceIndex
+sub SF
+c=c+1
+Document.all(numgc).style.BackgroundPosition= "0 " &c
+id=SetTimeOut("SF",16,"VBScript")
+end sub
+SF
+</script>
+永远居中的背景图片[推荐][共1步][修改图片名称]
+====1、将以下代码加入HEML的<body></body>之间：
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image: URL(图片名称.gif);
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;}
+-->
+</STYLE>
+随机显示的背景图片[想别人每次看你页面时背景都不一样吗？][共1步]
+====1、将以下代码加入HTML的<head></head>之间：
+<script LANGUAGE="JavaScript">
+bg = new Array(2); //设定图片数量，如果图片数为3，这个参数就设为2，依次类推
+bg[0] = 'bg1.gif' //显示的图片路径，可用http://
+bg[1] = 'bg2.gif'
+bg[2] = 'bg3.gif'
+index = Math.floor(Math.random() * bg.length);
+document.write("<BODY BACKGROUND="+bg[index]+">");
+</script>
+跟随屏幕移动的图像[推荐]修改图片名称和文字即可][共2步]
+====1、将以下代码加入到HEML的<head></head>之间：
+<style type="text/css">
+#floater {
+position: absolute;
+left: 500;
+top: 146;
+width: 125;
+visibility: visible;
+z-index: 10;
+}</style>
+====2、将以下代码加入到HEML的<body></body>之间
+<div ID="floater" style="left: 590px; top: 158px">
+<p align="center"><img SRC="想要显示的图片.gif" alt="图片显示的文字" WIDTH="125" HEIGHT="60"><br>
+<font color="#FF8040">图片下面的文字</font></p>
+</div><script LANGUAGE="JavaScript">
+self.onError=null;
+currentX = currentY = 0;
+whichIt = null;
+lastScrollX = 0; lastScrollY = 0;
+NS = (document.layers) ? 1 : 0;
+IE = (document.all) ? 1: 0;
+<!-- STALKER CODE -->
+function heartBeat() {
+if(IE) { diffY = document.body.scrollTop; diffX = document.body.scrollLeft; }
+if(NS) { diffY = self.pageYOffset; diffX = self.pageXOffset; }
+if(diffY != lastScrollY) {
+percent = .1 * (diffY - lastScrollY);
+if(percent > 0) percent = Math.ceil(percent);
+else percent = Math.floor(percent);
+if(IE) document.all.floater.style.pixelTop += percent;
+if(NS) document.floater.top += percent;
+lastScrollY = lastScrollY + percent;
+}
+if(diffX != lastScrollX) {
+percent = .1 * (diffX - lastScrollX);
+if(percent > 0) percent = Math.ceil(percent);
+else percent = Math.floor(percent);
+if(IE) document.all.floater.style.pixelLeft += percent;
+if(NS) document.floater.left += percent;
+lastScrollX = lastScrollX + percent;
+}
+}
+<!-- /STALKER CODE -->
+<!-- DRAG DROP CODE -->
+function checkFocus(x,y) {
+stalkerx = document.floater.pageX;
+stalkery = document.floater.pageY;
+stalkerwidth = document.floater.clip.width;
+stalkerheight = document.floater.clip.height;
+if( (x > stalkerx && x < (stalkerx+stalkerwidth)) && (y > stalkery && y < (stalkery+stalkerheight))) return true;
+else return false;
+}
+function grabIt(e) {
+if(IE) {
+whichIt = event.srcElement;
+while (whichIt.id.indexOf("floater") == -1) {
+whichIt = whichIt.parentElement;
+if (whichIt == null) { return true; }
+}
+whichIt.style.pixelLeft = whichIt.offsetLeft;
+whichIt.style.pixelTop = whichIt.offsetTop;
+currentX = (event.clientX + document.body.scrollLeft);
+currentY = (event.clientY + document.body.scrollTop);
+} else {
+window.captureEvents(Event.MOUSEMOVE);
+if(checkFocus (e.pageX,e.pageY)) {
+whichIt = document.floater;
+StalkerTouchedX = e.pageX-document.floater.pageX;
+StalkerTouchedY = e.pageY-document.floater.pageY;
+}
+}
+return true;
+}
+function moveIt(e) {
+if (whichIt == null) { return false; }
+if(IE) {
+newX = (event.clientX + document.body.scrollLeft);
+newY = (event.clientY + document.body.scrollTop);
+distanceX = (newX - currentX); distanceY = (newY - currentY);
+currentX = newX; currentY = newY;
+whichIt.style.pixelLeft += distanceX;
+whichIt.style.pixelTop += distanceY;
+if(whichIt.style.pixelTop < document.body.scrollTop) whichIt.style.pixelTop = document.body.scrollTop;
+if(whichIt.style.pixelLeft < document.body.scrollLeft) whichIt.style.pixelLeft = document.body.scrollLeft;
+if(whichIt.style.pixelLeft > document.body.offsetWidth - document.body.scrollLeft - whichIt.style.pixelWidth - 20) whichIt.style.pixelLeft = document.body.offsetWidth - whichIt.style.pixelWidth - 20;
+if(whichIt.style.pixelTop > document.body.offsetHeight + document.body.scrollTop - whichIt.style.pixelHeight - 5) whichIt.style.pixelTop = document.body.offsetHeight + document.body.scrollTop - whichIt.style.pixelHeight - 5;
+event.returnValue = false;
+} else {
+whichIt.moveTo(e.pageX-StalkerTouchedX,e.pageY-StalkerTouchedY);
+if(whichIt.left < 0+self.pageXOffset) whichIt.left = 0+self.pageXOffset;
+if(whichIt.top < 0+self.pageYOffset) whichIt.top = 0+self.pageYOffset;
+if( (whichIt.left + whichIt.clip.width) >= (window.innerWidth+self.pageXOffset-17)) whichIt.left = ((window.innerWidth+self.pageXOffset)-whichIt.clip.width)-17;
+if( (whichIt.top + whichIt.clip.height) >= (window.innerHeight+self.pageYOffset-17)) whichIt.top = ((window.innerHeight+self.pageYOffset)-whichIt.clip.height)-17;
+return false;
+}
+return false;
+}
+function dropIt() {
+whichIt = null;
+if(NS) window.releaseEvents (Event.MOUSEMOVE);
+return true;
+}
+<!-- DRAG DROP CODE -->
+if(NS) {
+window.captureEvents(Event.MOUSEUP|Event.MOUSEDOWN);
+window.onmousedown = grabIt;
+window.onmousemove = moveIt;
+window.onmouseup = dropIt;
+}
+if(IE) {
+document.onmousedown = grabIt;
+document.onmousemove = moveIt;
+document.onmouseup = dropIt;
+}
+if(NS || IE) action = window.setInterval("heartBeat()",1);
+</script>

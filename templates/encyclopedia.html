@@ -1,0 +1,32 @@
+{% extends "general_base.html" %}
+{% block title %}
+Encyclopdia
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="wrapper">
+<h3>Encyclopedia</h3>
+
+    <br>
+   {% if html_message != "" %}
+        {{html_message}}
+    {% endif %}
+    {{super()}}
+<br>
+<br>
+<footer>
+    <p><a href="https://myanimelist.net/">All material except the rating part are provided from myanimelist.net Used with permission
+        For More information about this show, please visit myanimelist.net</a></p>
+</footer>
+</div>
+
+
+
+{% endblock %}

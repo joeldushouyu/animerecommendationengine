@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}
+Demo App
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style>
+
+.wrapper {
+   max-width: 960px; /** 20px smaller, to fit the paddings on the sides */
+    margin:0 auto; /* this will center the page */
+
+   /** ... omitted for brevity */
+}
+
+
+.scroll-box {
+    width: 300px;
+    height: 350px;
+    border: 20px solid lightblue;
+    padding: 20px;
+    overflow: auto;
+  }
+.flex-container {
+  display: flex;
+  color: lightblack;
+
+}
+
+.flex-container > div {
+  background-color: lightblue;
+  margin: 10px;
+  padding: 20px;
+  overflow: auto;
+
+}
+
+aside {
+  width: 20%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: gray;
+}
+</style>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="wrapper">
+
+            <hr>
+        <h5><p align="center"> View by alphabetical list </p></h5>
+        <p align="center"><a href="/encyclopedia/other">#</a> <a href="/encyclopedia/a">A</a> <a href="/encyclopedia/b">B</a> <a href="/encyclopedia/c">C</a> <a href="/encyclopedia/d">D</a> <a href="/encyclopedia/e">E</a> <a href="/encyclopedia/f">F</a> <a href="/encyclopedia/g">G</a> <a href="/encyclopedia/h">H</a> <a href="/encyclopedia/i">I</a> <a href="/encyclopedia/j">J</a> <a href="/encyclopedia/k">K</a> <a href="/encyclopedia/l">L</a> <a href="/encyclopedia/m">M</a> <a href="/encyclopedia/n">N</a> <a href="/encyclopedia/o">O</a> <a href="/encyclopedia/p">P</a> <a href="/encyclopedia/q">Q</a> <a href="/encyclopedia/r">R</a> <a href="/encyclopedia/s">S</a> <a href="/encyclopedia/t">T</a> <a href="/encyclopedia/u">U</a> <a href="/encyclopedia/v">V</a> <a href="/encyclopedia/w">W</a> <a href="/encyclopedia/x">X</a> <a href="/encyclopedia/y">Y</a> <a href="/encyclopedia/z">Z</a><br>
+        <h5><p align="center">View by genre type </p></h5>
+        <a href="/genre/Action">action</a> <a href="/genre/Adventure">adventure</a> <a href="/genre/Cars">cars</a> <a href="/genre/Comedy">comedy</a> <a href="/genre/Dementia">dementia</a> <a href="/genre/Demons">demons</a> <a href="/genre/Drama">drama</a>
+        <a href="/genre/Ecchi">ecchi</a> <a href="/genre/Fantasy">fantasy</a> <a href="/genre/Game">game</a> <a href="/genre/Harem">harem</a> <a href="/genre/Hentai">hentai</a> <a href="/genre/Histroical">historical</a> <a href="/genre/Horror">horror</a>
+        <a href="/genre/Josei">josei</a> <a href="/genre/Kids">kids</a> <a href="/genre/Magic">magic</a> <a href="/genre/Martial Arts">martial arts</a> <a href="/genre/Mecha">mecha</a> <a href="/genre/Military">military</a> <a href="/genre/Music">music</a> <a href="/genre/Mystery">mystery</a>
+        <a href="/genre/Parody">parody</a> <a href="/genre/Police">police</a> <a href="/genre/Psychological">psychological</a> <a href="/genre/Romance">romance</a> <a href="/genre/Samurai">samurai</a> <a href="/genre/School">school</a>
+        <a href="/genre/Sci-Fi">sci-fi</a> <a href="/genre/Seinen">seinen</a> <a href="/genre/Shoujo">shoujo</a> <a href="/genre/Shoujo Ai">shoujo ai</a> <a href="/genre/Shounen">shounen ai</a> <a href="/genre/Slice of Life">slice of life</a>
+        <a href="/genre/Space">space</a> <a href="/genre/Sports">sports</a> <a href="/genre/Super Power">super power</a> <a href="/genre/Supernatural">supernatural</a> <a href="/genre/Thriller">thriller</a> <a href="/genre/Vampire">vampire</a> <a href="/genre/Yaoi">yaoi</a> <a href="/genre/Yuri">yuri</a>
+
+
+    </div>
+{% endblock %}
+
+{% block viewlist %}
+    <div class="wrapper">
+
+            <hr>
+        <h5><p align="center"> View by alphabetical list </p></h5>
+        <p align="center"><a href="/encyclopedia/other">#</a> <a href="/encyclopedia/a">A</a> <a href="/encyclopedia/b">B</a> <a href="/encyclopedia/c">C</a> <a href="/encyclopedia/d">D</a> <a href="/encyclopedia/e">E</a> <a href="/encyclopedia/f">F</a> <a href="/encyclopedia/g">G</a> <a href="/encyclopedia/h">H</a> <a href="/encyclopedia/i">I</a> <a href="/encyclopedia/j">J</a> <a href="/encyclopedia/k">K</a> <a href="/encyclopedia/l">L</a> <a href="/encyclopedia/m">M</a> <a href="/encyclopedia/n">N</a> <a href="/encyclopedia/o">O</a> <a href="/encyclopedia/p">P</a> <a href="/encyclopedia/q">Q</a> <a href="/encyclopedia/r">R</a> <a href="/encyclopedia/s">S</a> <a href="/encyclopedia/t">T</a> <a href="/encyclopedia/u">U</a> <a href="/encyclopedia/v">V</a> <a href="/encyclopedia/w">W</a> <a href="/encyclopedia/x">X</a> <a href="/encyclopedia/y">Y</a> <a href="/encyclopedia/z">Z</a><br>
+        <h5><p align="center">View by genre type </p></h5>
+        <a href="/genre/action">action</a> <a href="/genre/adventure">adventure</a> <a href="/genre/fantasy">fantasy</a> <a href="/genre/science fiction">science fiction</a> <a href="/genre/drama">drama</a> <a href="/genre/romance">romance</a> <a href="/genre/erotica">erotica</a> <a href="/genre/comedy">comedy</a> <a href="/genre/supernatural">supernatural</a> <a href="/genre/horror">horror</a> <a href="/genre/mystery">mystery</a> <a href="/genre/psychological">psychological</a> <a href="/genre/thriller">thriller</a> <a href="/genre/slice of life">slice of life</a> <a href="/genre/tournament">tournament</a> <a href="/genre/magic">magic</a>
+
+
+    </div>
+
+{% endblock %}
+
+
+{% block box %}
+            <div class="flex-container">
+                <div>
+                                    <h2>Bug Report</h2>
+                    <p>Please report the bug by sending email to animerecommendationsdu@gmail.com </p>
+                    <p>Email Subject: Bug Report</p>
+                    <p>Please describe the bug as detail as you can</p>
+                    <p>Attaching photos and pictures will be extremely helpful</p>
+                </div>
+                 <div>
+                         <h2>Suggestion
+                        &Comment</h2>
+                        <p>Please leave any feedback and suggestion by sending email to animerecommendationsdu@gmail.com </p>
+                        <p>Email Subject: Feedback</p>
+                        <p>Please leave your suggestion and feedback in the email</p>
+                 </div>
+
+            </div>
+<!-- test
+        <aside>
+
+            <div class="scroll-box" style="position: absolute; left:0px; top: 250px">
+                <h2>Bug Report</h2>
+                <p>Please report the bug by sending email to animerecommendationsdu@gmail.com </p>
+                <p>Email Subject: Bug Report</p>
+                <p>Please describe the bug as detail as you can</p>
+                <p>Attaching photos and pictures will be extremely helpful</p>
+
+
+
+            </div>
+            <div class="scroll-box" style="position: absolute; right:0px; top: 250px">
+                <h2>Suggestion
+                    &Comment</h2>
+                <p>Please leave any feedback and suggestion by sending email to animerecommendationsdu@gmail.com </p>
+                <p>Email Subject: Feedback</p>
+                <p>Please leave your suggestion and feedback in the email</p>
+
+
+
+
+            </div>
+
+        </aside>
+        -->
+
+{% endblock %}
